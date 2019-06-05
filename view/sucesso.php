@@ -4,7 +4,7 @@
         $pessoa = $_REQUEST['pessoa'];
         
     }else{
-        header("location:index.php?pessoas");
+        header("location:index.php?Pessoas");
     }
 ?>
 

@@ -1,5 +1,4 @@
 <?php
-// require_once "Pessoas.php";
 
 // //colocamos new pessoa para poder atribuir pessoas na classe função modelo
 // $pessoa = new Pessoas();

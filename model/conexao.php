@@ -1,6 +1,6 @@
 <?php
 
-$host = "mysql:host=localhost;dbname=;charset=utf8mb4;port=3306";
+$host = "mysql:host=localhost;dbname=sistemapoo;charset=utf8mb4;port=3306";
 $dbUser="root";
 $dbPass = "";
 
