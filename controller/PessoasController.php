@@ -3,6 +3,7 @@
 require_once "model/Pessoas.php";
 require_once "model/Usuarios.php";
 require_once "model/conexao.php";
+require_once "model/Funcionario.php";
 
 class PessoasController{
 
@@ -21,6 +22,7 @@ class PessoasController{
                 $cpf = $_POST['cpf'];
                 $usuario = $_POST['usuario'];
                 $senha = password_hash($_POST['senha'], PASSWORD_DEFAULT);
+                $salario = $_POST['salario'];
 
                 //validando o tipo do pessoa se ela eh usuario ou  funcionario
                 if($tipoPessoa  == "usuario"){
@@ -42,6 +44,24 @@ class PessoasController{
                         echo "deu ruim";
                     }
                 
+                }elseif ($tipoPessoa == "funcionario") {
+                    $novoFuncionario = new Funcionario(
+                        $nome,
+                        $idade,
+                        $cpf,
+                        $salario,
+                        $senha, 
+                        $usuario
+
+                    );
+                    if ($novoFuncionario->cadastrarFuncionario($con,$novoFuncionario)) {
+                        $_REQUEST['funcionario'] = $novoFuncionario;
+
+                        require_once "view/sucesso.php";
+
+                    }else{
+                        echo 'deu ruim'; 
+                    }
                 }
               
                 break;  
